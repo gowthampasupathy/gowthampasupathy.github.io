@@ -1,0 +1,19 @@
+table,th,td{
+    width: 36%;
+    border: 2px solid black;
+    text-align: center;
+    padding:10px;
+    background-color: azure;
+}
+body{
+    background-color: rgb(229, 250, 215);
+    text-align: center;
+    padding: 5%;
+}
+
+header {
+    width: 30%;
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 3%;
+  }
