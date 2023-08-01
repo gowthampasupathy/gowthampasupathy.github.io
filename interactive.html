@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Button</title>
+</head>
+<body>
+ <h1 >BASIC INTERACTIVE PAGE</h1>
+ <table id="input">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>jack</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>Micheal</td>
+      <td>20</td>
+    </tr>
+  </table>
+  <p>click Here to change the color of the table
+<button id="clickbtn">Click</button>
+  </p>
+
+<script>
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    function changeTextColor() {
+        const textElement = document.getElementById("input");
+        const newColor = getRandomColor();
+        textElement.style.color = newColor;
+    }
+    const changeColorButton = document.getElementById("clickbtn");
+    changeColorButton.addEventListener("click", changeTextColor);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Action</title>
+       
+</head>
+<script>
+    function list() {
+        const Input = document.getElementById("in");
+        const task = Input.value.trim();
+
+        if (task === "") {
+            alert("Please enter a valid task.");
+            return;
+        }
+
+        const listItem = document.createElement("li");
+       listItem.innerHTML = `<span class="todoItem" onclick="toggleComplete(this)">${task}</span><button onclick="removeTodoItem(this)">Remove</button>`;
+        document.getElementById("listItems").appendChild(listItem);
+
+        todoInput.value = "";
+    }
+
+    function toggleComplete(item) {
+        item.classList.toggle("completed");
+    }
+    function removeTodoItem(item) {
+        const listItem = item.parentElement;
+        listItem.remove();
+    }
+</script>
+<body>
+    <div >
+    <h1 >TODO LIST</h1>
+    <input type="text" name="in" id="in">
+    <button onclick="list()">Add List</button>
+    <ul id="listItems"></ul> 
+    </div>
+</body>
